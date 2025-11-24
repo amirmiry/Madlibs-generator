@@ -33,3 +33,21 @@ def fill_story(story, placeholders):
         answer = input(f"Enter a word for {placeholder}: ")
         story = story.replace(placeholder, answer)
     return story
+
+
+
+def main():
+    story = load_story("story.txt")
+    placeholders = extract_placeholders(story)
+
+    if not placeholders:
+        print("No placeholders found in the story.")
+        return
+
+    final_story = fill_story(story, placeholders)
+    print("\n--- Your Story ---")
+    print(final_story)
+
+
+if __name__ == "__main__":
+    main()
