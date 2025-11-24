@@ -24,3 +24,12 @@ def extract_placeholders(story, start="<", end=">"):
             word_start_idx = -1
 
     return placeholders
+
+
+
+def fill_story(story, placeholders):
+    """Ask the user for each placeholder and replace it in the story."""
+    for placeholder in placeholders:
+        answer = input(f"Enter a word for {placeholder}: ")
+        story = story.replace(placeholder, answer)
+    return story
